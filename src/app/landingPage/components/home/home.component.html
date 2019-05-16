@@ -1,0 +1,57 @@
+<h3 class="text-center mt-5">Search over {{postsCounter}} active posts</h3>
+
+<div class="searchBar">
+  <div class="buttons" id="categoryButtons">
+    <button mdbBtn type="button" color="light" mdbWavesEffect>Private Sales</button>
+    <button mdbBtn type="button" color="light" mdbWavesEffect>Dealership Sales</button>
+    <button mdbBtn type="button" color="light" mdbWavesEffect>Parts</button>    
+    <button mdbBtn type="button" color="light" mdbWavesEffect>Wheels and Tires</button>
+  </div>
+
+  <div class="searchArea mb-5">
+    <input [(ngModel)]="searchQuery" type="text" class="form-control" placeholder="Search for anything...">
+    <div class="buttons">
+      <button mdbBtn type="button" color="info" (click)="search('local')" mdbWavesEffect>Search Local Area</button>
+      <button mdbBtn type="button" color="info" (click)="search('national')" mdbWavesEffect>Search Nationwide</button>
+    </div>
+  </div>
+</div>
+
+<div id="mainCarousel">
+  <h5 class="font-italic">Featured Private Sales</h5>
+  <mdb-carousel class="carousel slide" [animation]="'slide'" [interval]="'3000'">
+    <mdb-carousel-item>
+      <div class="view w-100">
+        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg" alt="First slide">
+        <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">1994 BMW 325i</h3>
+        <p>$2300</p>
+        <p>Leland, NC</p>
+      </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <div class="view w-100">
+        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg" alt="Second slide">
+        <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">2002 Ford Mustang GT</h3>
+        <p>$6500</p>
+        <p>Jacksonville, NC</p>
+      </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <div class="view w-100">
+        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg" alt="Third slide">
+        <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">1993 Nissan 240sx</h3>
+        <p>$50000 FIRM</p>
+        <p>Conway, SC</p>
+      </div>
+    </mdb-carousel-item>
+  </mdb-carousel>
+</div>

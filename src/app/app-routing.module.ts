@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
-const routes: Routes = [];
+import { RouterModule, Router } from '@angular/router';
+import { LandingPageRoutingModule } from './landingPage/landingPage-routing.module';
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [LandingPageRoutingModule],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  constructor(private router: Router) {
+    this.router.errorHandler = (error: any) => {
+      this.router.navigate(['']);
+    }
+  }
+}
