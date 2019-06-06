@@ -1,57 +1,126 @@
-<h3 class="text-center mt-5">Search over {{postsCounter}} active posts</h3>
+<div class="container mb-3">
 
-<div class="searchBar">
-  <div class="buttons" id="categoryButtons">
-    <button mdbBtn type="button" color="light" mdbWavesEffect>Private Sales</button>
-    <button mdbBtn type="button" color="light" mdbWavesEffect>Dealership Sales</button>
-    <button mdbBtn type="button" color="light" mdbWavesEffect>Parts</button>    
-    <button mdbBtn type="button" color="light" mdbWavesEffect>Wheels and Tires</button>
+  <h5 class="text-center my-2">Free vehicle classifieds.</h5>
+
+  <nav class="col-12 mt-5">
+
+    <div class="row nav nav-tabs" id="nav-tab desktopMenu" role="tablist">
+      <a class="text-center col-sm-3 nav-item nav-link active" id="nav-tab-1" data-toggle="tab" href="#nav" role="tab" aria-controls="nav" aria-selected="true" (click)="categorySelected('private')">Private Listings</a>
+      <a class="text-center col-sm-3 nav-item nav-link" id="nav-tab-2" data-toggle="tab" href="#nav" role="tab" aria-controls="nav" aria-selected="false" (click)="categorySelected('dealer')">Dealer Listings</a>
+      <a class="text-center col-sm-3 nav-item nav-link" id="nav-tab-3" data-toggle="tab" href="#nav" role="tab" aria-controls="nav" aria-selected="false" (click)="categorySelected('parts')">Parts</a>
+      <a class="text-center col-sm-3 nav-item nav-link" id="nav-tab-3" data-toggle="tab" href="#nav" role="tab" aria-controls="nav" aria-selected="false" (click)="categorySelected('wat')">Wheels and Tires</a>
+    </div>
+  </nav>
+
+  <div class="form-group" id="mobileMenu">
+    <select class="form-control" (change)="categorySelected($event.target.value)">
+      <option value="private" selected>Private Listings</option>
+      <option value="dealer">Dealer Listings</option>
+      <option value="parts">Parts</option>
+      <option value="wat">Wheels and Tires</option>
+    </select>
   </div>
 
-  <div class="searchArea mb-5">
-    <input [(ngModel)]="searchQuery" type="text" class="form-control" placeholder="Search for anything...">
-    <div class="buttons">
-      <button mdbBtn type="button" color="info" (click)="search('local')" mdbWavesEffect>Search Local Area</button>
-      <button mdbBtn type="button" color="info" (click)="search('national')" mdbWavesEffect>Search Nationwide</button>
+  <div class="tab-content mt-2" id="nav-tabContent">
+    <div class="tab-pane show active" id="nav" role="tabpanel" aria-labelledby="nav-tab">
+      <div class="row">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-sm-5"><input [(ngModel)]="newSearch.searchQuery" type="text" class="form-control text-center" placeholder="Search for anything..."></div>
+            <div class="col-sm-1 mt-1 text-center">within</div>
+            <div class="col-sm-2"><input [(ngModel)]="newSearch.searchDistance" type="text" class="form-control text-center" placeholder="(distance)"></div>
+            <div class="col-sm-1 mt-1 text-center">miles of</div>
+            <div class="col-sm-3"><input [(ngModel)]="newSearch.searchZip" type="text" class="form-control text-center" placeholder="(zip code)"></div>
+          </div>
+        </div>
+        <div class="buttons col-12">
+          <button class="col-3" mdbBtn type="button" color="info" (click)="search('local')" mdbWavesEffect>Search Local</button>
+          <button class="col-3" mdbBtn type="button" color="info" (click)="search('national')" mdbWavesEffect>Search All</button>
+        </div>
+      </div>
     </div>
   </div>
+
 </div>
 
-<div id="mainCarousel">
-  <h5 class="font-italic">Featured Private Sales</h5>
-  <mdb-carousel class="carousel slide" [animation]="'slide'" [interval]="'3000'">
-    <mdb-carousel-item>
-      <div class="view w-100">
-        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg" alt="First slide">
-        <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-6">
+      <div>
+        <h5 class="font-italic">Featured Private Sales</h5>
+        <mdb-carousel class="carousel slide" [animation]="'slide'" [interval]="'3000'">
+          <mdb-carousel-item>
+            <div class="view w-100">
+              <img class="d-block w-100" [src]="images[0]" alt="First slide">
+              <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+            </div>
+            <div class="carousel-caption">
+              <h3 class="h3-responsive">1994 BMW 325i</h3>
+              <p> $2300 | Leland, NC</p>
+            </div>
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <div class="view w-100">
+              <img class="d-block w-100" [src]="images[1]" alt="Second slide">
+              <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
+            </div>
+            <div class="carousel-caption">
+              <h3 class="h3-responsive">2002 Ford Mustang GT</h3>
+              <p>$6500 | Jacksonville, NC</p>
+            </div>
+          </mdb-carousel-item>
+          <mdb-carousel-item>
+            <div class="view w-100">
+              <img class="d-block w-100" [src]="images[2]" alt="Third slide">
+              <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+            </div>
+            <div class="carousel-caption">
+              <h3 class="h3-responsive">1993 Nissan 240sx</h3>
+              <p>$50000 FIRM | Conway, SC</p>
+            </div>
+          </mdb-carousel-item>
+        </mdb-carousel>
       </div>
-      <div class="carousel-caption">
-        <h3 class="h3-responsive">1994 BMW 325i</h3>
-        <p>$2300</p>
-        <p>Leland, NC</p>
+    </div>
+
+    <div class="col-md-6">
+        <div>
+          <h5 class="font-italic">Featured Dealer Sales</h5>
+          <mdb-carousel class="carousel slide" [animation]="'slide'" [interval]="'3000'">
+            <mdb-carousel-item>
+              <div class="view w-100">
+                <img class="d-block w-100" [src]="images[3]" alt="First slide">
+                <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+              </div>
+              <div class="carousel-caption">
+                <h3 class="h3-responsive">2018 Porsche Carrera</h3>
+                <p> $35000 | Whiteville, NC</p>
+              </div>
+            </mdb-carousel-item>
+            <mdb-carousel-item>
+              <div class="view w-100">
+                <img class="d-block w-100" [src]="images[4]" alt="Second slide">
+                <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
+              </div>
+              <div class="carousel-caption">
+                <h3 class="h3-responsive">2015 Ford Focus SE</h3>
+                <p>$8000 | Wilmington, NC</p>
+              </div>
+            </mdb-carousel-item>
+            <mdb-carousel-item>
+              <div class="view w-100">
+                <img class="d-block w-100" [src]="images[5]" alt="Third slide">
+                <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+              </div>
+              <div class="carousel-caption">
+                <h3 class="h3-responsive">2005 Suzuki Forenza</h3>
+                <p>$4999 | Darlington, SC</p>
+              </div>
+            </mdb-carousel-item>
+          </mdb-carousel>
+        </div>
       </div>
-    </mdb-carousel-item>
-    <mdb-carousel-item>
-      <div class="view w-100">
-        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg" alt="Second slide">
-        <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
-      </div>
-      <div class="carousel-caption">
-        <h3 class="h3-responsive">2002 Ford Mustang GT</h3>
-        <p>$6500</p>
-        <p>Jacksonville, NC</p>
-      </div>
-    </mdb-carousel-item>
-    <mdb-carousel-item>
-      <div class="view w-100">
-        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg" alt="Third slide">
-        <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
-      </div>
-      <div class="carousel-caption">
-        <h3 class="h3-responsive">1993 Nissan 240sx</h3>
-        <p>$50000 FIRM</p>
-        <p>Conway, SC</p>
-      </div>
-    </mdb-carousel-item>
-  </mdb-carousel>
+
+  </div>
 </div>
