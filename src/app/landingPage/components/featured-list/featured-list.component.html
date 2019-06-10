@@ -1,0 +1,11 @@
+<div class="container mt-5">
+
+  <h5 class="font-italic text-center mb-3">Other Featured Listings</h5>
+
+  <div class="row my-1" *ngFor="let item of featuredListItems" [ngStyle]="{ 'background-color': item.seller === 'Dealer' ? 'rgba(0, 123, 255, .7)' : 'rgba(40, 167, 69, .7)' }">
+    <div class="col-2"><img [src]="item.image"></div>
+    <div class="col-2"></div>
+    <div class="col-5 pt-3"><span class="font-italic">{{item.seller}}</span><br><span class="font-weight-bold">{{item.description}}</span></div>
+    <div class="col-3 pt-3"><span class="font-weight-bold">${{item.price | number}}</span><br>{{item.location}}</div>
+  </div>
+</div>
