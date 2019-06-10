@@ -3,16 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CarouselModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md';
 import { FormsModule } from '@angular/forms';
 
-import { HomeComponent } from './components/home/home.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
 import { FeaturedCarouselComponent } from './components/featured-carousel/featured-carousel.component';
-import { LandingSearchComponent } from './components/landing-search/landing-search.component';
+import { SearchComponent } from './components/search/search.component';
 import { FeaturedListComponent } from './components/featured-list/featured-list.component';
 
 @NgModule({
     declarations: [
-        HomeComponent,
+        MainPageComponent,
         FeaturedCarouselComponent,
-        LandingSearchComponent,
+        SearchComponent,
         FeaturedListComponent
     ],
     imports: [

@@ -3,12 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-landing-search',
-  templateUrl: './landing-search.component.html',
-  styleUrls: ['./landing-search.component.scss']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss']
 })
 
-export class LandingSearchComponent implements OnInit {
+export class SearchComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private router: Router) { }

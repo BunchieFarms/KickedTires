@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
 
 const routes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: ':area/:query', component: HomeComponent }
+    { path: '', component: MainPageComponent },
+    { path: ':area/:query', component: MainPageComponent }
 ];
 
 @NgModule({

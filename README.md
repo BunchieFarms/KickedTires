@@ -1,3 +1,3 @@
 # Kickedtires
 
-Built with Angular.
+Free vehicle classifieds service.
