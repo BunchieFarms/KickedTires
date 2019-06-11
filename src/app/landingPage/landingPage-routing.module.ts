@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MainPageComponent } from './components/main-page/main-page.component';
+import { MainPageSearchComponent } from './components/main-page-search/main-page-search.component';
 
 const routes: Routes = [
-    { path: '', component: MainPageComponent },
-    { path: ':area/:query', component: MainPageComponent }
+    { path: '', component: MainPageSearchComponent }
 ];
 
 @NgModule({

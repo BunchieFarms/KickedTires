@@ -1,23 +1,9 @@
+// Search Area start
 .searchArea {
     background-color: rgb(255, 101, 1);
     padding: 10px;
     margin-top: -10px;
     border-radius: 0 0 4px 4px;
-}
-
-.searchBar {
-    margin-top: 10px;
-    width: 70%;
-    margin: 0px auto;
-
-    input[type=text] {
-        width: 70%;
-        display: block;
-        margin: 0px auto;
-        margin-top: 10px;
-        text-align: center;
-        margin-top: 10px;
-    }
 }
 
 ::placeholder { /* Firefox */
@@ -52,3 +38,4 @@
     nav { display: none; }
     #mobileMenu { display: block; }
 }
+// Search Area end
