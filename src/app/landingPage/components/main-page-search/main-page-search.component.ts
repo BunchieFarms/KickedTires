@@ -20,6 +20,10 @@ export class MainPageSearchComponent implements OnInit {
     category: 'private'
   };
 
+  hideFeatured = false;
+  hideLoader = true;
+  test = true;
+
   ngOnInit() {
     const searchArea = this.route.snapshot.paramMap.get('area');
     const searchQuery = this.route.snapshot.paramMap.get('query');
@@ -32,7 +36,14 @@ export class MainPageSearchComponent implements OnInit {
   }
 
   search(location: string) {
-    window.location.href = `/${location}/${this.newSearch.searchQuery}`;
+    // window.location.href = `/${location}/${this.newSearch.searchQuery}`;
+    console.log(this.newSearch.searchQuery);
+    this.hideFeatured = true;
+    this.hideLoader = false;
+    setTimeout(() => {
+      this.hideLoader = true;
+      this.test = false;
+    }, (Math.random() + 1000) );
   }
 
   categorySelected(category: string) {

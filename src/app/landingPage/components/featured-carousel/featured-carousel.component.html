@@ -5,34 +5,14 @@
       <div>
         <h5 class="font-italic text-success">Featured Private Owner Sales</h5>
         <mdb-carousel class="carousel slide" [animation]="'slide'" [interval]="'3000'">
-          <mdb-carousel-item>
+          <mdb-carousel-item *ngFor="let item of privateItems">
             <div class="view w-100">
-              <img class="d-block w-100" [src]="images[0]" alt="First slide">
+              <img class="d-block w-100" [src]="item.image" alt="First slide">
               <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
             </div>
             <div class="carousel-caption">
-              <h3 class="h3-responsive">1994 BMW 325i</h3>
-              <p> $2300 | Leland, NC</p>
-            </div>
-          </mdb-carousel-item>
-          <mdb-carousel-item>
-            <div class="view w-100">
-              <img class="d-block w-100" [src]="images[1]" alt="Second slide">
-              <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
-            </div>
-            <div class="carousel-caption">
-              <h3 class="h3-responsive">2002 Ford Mustang GT</h3>
-              <p>$6500 | Jacksonville, NC</p>
-            </div>
-          </mdb-carousel-item>
-          <mdb-carousel-item>
-            <div class="view w-100">
-              <img class="d-block w-100" [src]="images[2]" alt="Third slide">
-              <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
-            </div>
-            <div class="carousel-caption">
-              <h3 class="h3-responsive">1993 Nissan 240sx</h3>
-              <p>$50000 FIRM | Conway, SC</p>
+              <h3 class="h3-responsive">{{item.description}}</h3>
+              <p>${{item.price | number}} | {{item.location}}</p>
             </div>
           </mdb-carousel-item>
         </mdb-carousel>
@@ -43,34 +23,14 @@
         <div>
           <h5 class="font-italic text-primary">Featured Dealer Sales</h5>
           <mdb-carousel class="carousel slide" [animation]="'slide'" [interval]="'3000'">
-            <mdb-carousel-item>
+            <mdb-carousel-item *ngFor="let item of dealerItems">
               <div class="view w-100">
-                <img class="d-block w-100" [src]="images[3]" alt="First slide">
+                <img class="d-block w-100" [src]="item.image" alt="First slide">
                 <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
               </div>
               <div class="carousel-caption">
-                <h3 class="h3-responsive">2018 Porsche Carrera</h3>
-                <p> $35000 | Whiteville, NC</p>
-              </div>
-            </mdb-carousel-item>
-            <mdb-carousel-item>
-              <div class="view w-100">
-                <img class="d-block w-100" [src]="images[4]" alt="Second slide">
-                <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
-              </div>
-              <div class="carousel-caption">
-                <h3 class="h3-responsive">2015 Ford Focus SE</h3>
-                <p>$8000 | Wilmington, NC</p>
-              </div>
-            </mdb-carousel-item>
-            <mdb-carousel-item>
-              <div class="view w-100">
-                <img class="d-block w-100" [src]="images[5]" alt="Third slide">
-                <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
-              </div>
-              <div class="carousel-caption">
-                <h3 class="h3-responsive">2005 Suzuki Forenza</h3>
-                <p>$4999 | Darlington, SC</p>
+                <h3 class="h3-responsive">{{item.description}}</h3>
+                <p>${{item.price | number}} | {{item.location}}</p>
               </div>
             </mdb-carousel-item>
           </mdb-carousel>

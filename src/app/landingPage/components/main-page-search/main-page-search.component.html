@@ -40,8 +40,10 @@
 
 </div>
 
-<app-featured-carousel></app-featured-carousel>
+<app-featured-carousel [hidden]="hideFeatured"></app-featured-carousel>
 
-<app-featured-list></app-featured-list>
+<app-featured-list [hidden]="hideFeatured"></app-featured-list>
 
-<app-search-results></app-search-results>
+<app-search-results [hidden]="hideLoader"></app-search-results>
+
+<div class="container" [hidden]="test">{{newSearch.searchQuery}}</div>
