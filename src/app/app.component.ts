@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Kicked Tires';
+
+  loggedInUser = 'bryce@ohmer.com';
+  notLoggedIn = true;
+
+  ifLoggedIn() {
+    if (this.notLoggedIn === true) {
+      return 'Log In / Sign Up';
+    } else {
+      return this.loggedInUser;
+    }
+  }
 }
